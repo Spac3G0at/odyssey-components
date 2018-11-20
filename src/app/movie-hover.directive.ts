@@ -10,11 +10,11 @@ export class MovieHoverDirective implements OnInit {
 	ngOnInit() {}
 
 	@HostListener('mouseenter') mouseEnterEvent (eventData: Event) {
-		this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'red');
+		this.renderer.addClass(this.elRef.nativeElement, 'text-danger');
 	}
 
 	@HostListener('mouseleave') mouseLeaveEvent (eventData: Event) {
-		this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
+		this.renderer.removeClass(this.elRef.nativeElement, 'text-danger');
 	}
 
 }
