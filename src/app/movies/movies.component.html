@@ -1,0 +1,24 @@
+<div class="container">
+
+	<button class="btn" (click)="toogleMovies()" [ngClass]="{'btn-danger': showMovies, 'btn-success': !showMovies}">{{ showMovies? "Cacher" : "Afficher" }}</button>
+
+	<div *ngIf="showMovies" class="row">
+		<div *ngFor='let movie of movies; let i = index' class="col-lg-3 col-md-4 col-sm-6 col-12 mt-3">
+			<div *ngIf="i === 0; else elseBlock" appMovieHover class="card">
+				<img class="card-img-top" src="{{ movie.imageUrl }}" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{ movie.title }}</h5>
+				</div>
+			</div>
+			<ng-template #elseBlock>
+				<div class="card">
+						<img class="card-img-top" src="{{ movie.imageUrl }}" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">{{ movie.title }}</h5>
+					</div>
+				</div>
+			</ng-template>
+		</div>
+	</div>
+
+</div>

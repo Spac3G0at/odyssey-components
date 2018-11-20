@@ -8,20 +8,24 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { ROUTES } from './routes/routes.module';
+import { MoviesComponent } from './movies/movies.component';
+import { MovieHoverDirective } from './movie-hover.directive';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SignUpComponent,
-    UserProfileComponent,
-    MenuComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(ROUTES)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		SignUpComponent,
+		UserProfileComponent,
+		MenuComponent,
+		MoviesComponent,
+		MovieHoverDirective
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		RouterModule.forRoot(ROUTES)
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
